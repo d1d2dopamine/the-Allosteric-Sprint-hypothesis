@@ -1,0 +1,16 @@
+# Raw dataset files (redistribution may violate dataset licenses -- do not commit)
+*.csv
+*.json
+data/
+raw/
+HYPERAKTIV*/
+BALLADEER*/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
