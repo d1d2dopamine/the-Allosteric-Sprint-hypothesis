@@ -1,6 +1,7 @@
 # Allostatic Sprint Hypothesis — Exploring Impulsivity Heterogeneity in ADHD
 
 <p align="center">
+  <a href="https://doi.org/10.5281/zenodo.21304761"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21304761.svg" alt="DOI"></a>
   <img src="https://img.shields.io/badge/status-exploratory-orange" alt="status">
   <img src="https://img.shields.io/badge/peer--reviewed-no-red" alt="not peer reviewed">
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="license">
