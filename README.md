@@ -21,6 +21,8 @@
 
 This project explores whether ADHD is behaviorally heterogeneous with respect to impulsivity on continuous-performance / go-no-go style attention tasks, using two independent, publicly available datasets. It originated from an informal hypothesis ("Allostatic Sprint") proposing two behavioral subtypes of ADHD decompensation. Some parts of that hypothesis held up under testing; others did not. Both are reported here — the scorecard above is the honest summary, everything below is the full detail behind it.
 
+**A note on what "subtype" means here:** the analysis below tests a *static* version of the hypothesis — that ADHD participants sort into stable, cross-sectional subgroups based on a single test session. The original informal hypothesis is actually *cyclical*, not static: the proposal is that the same individual moves over time between an "Allostatic Sprint" phase (high dopamine/ATP availability, high performance) and an "Allostatic Crash" phase (low dopamine/ATP, self-protective procrastination), with transitions on a timescale of weeks to months — not that people are permanently sorted into one type or the other. Both datasets used here (BALLADEER, HYPERAKTIV) capture only a single snapshot per participant, so they can test whether cross-sectional heterogeneity exists (it does — see below), but they cannot test the cyclical phase-transition version of the hypothesis, which would require repeated longitudinal measurement of the same individuals over time. See "Untested" below for detail.
+
 ## What Was Tested, and What the Data Actually Showed
 
 **Supported:**
@@ -38,7 +40,9 @@ This project explores whether ADHD is behaviorally heterogeneous with respect to
 <p align="center"><sub>Descriptive plots of the clustering used. Not evidence of separate neural mechanisms — mechanism was never measured (see below).</sub></p>
 
 **Not supported:**
-- The hypothesis that the two proposed subtypes ("Decompensated Sprint" vs. "Compensated Crash") follow *different trajectories over time within a task* (stable fast-but-impulsive vs. progressive fatigue/collapse) was tested directly with a mixed-effects model (`commission ~ block × cluster`, Pure-ADHD only) and came back flat (p = 0.847). The two clusters differ in baseline impulsivity, not in how that impulsivity changes across the task. This specific test was likely underpowered (only 4 of 20 "Sprint" participants had complete 4-block data), so it should be read as inconclusive rather than a clean disproof — but it does **not** support the original claim.
+- The hypothesis that the two proposed subtypes ("Decompensated Sprint" vs. "Compensated Crash") follow different trajectories *within a single test session* (minutes-long blocks) was tested with a mixed-effects model (`commission ~ block × cluster`, Pure-ADHD only) and came back flat (p = 0.847). The two clusters differ in baseline impulsivity, not in how that impulsivity changes across the task. This specific test was likely underpowered (only 4 of 20 "Sprint" participants had complete 4-block data), so it should be read as inconclusive rather than a clean disproof — but it does **not** support the original claim.
+
+  **Note on scope:** this test only covers within-session dynamics (minutes). It does **not** test the longer-timescale cyclical hypothesis described below (phase transitions over weeks/months) — that would require longitudinal data this project does not have. A flat result at the minutes timescale says nothing about whether phase cycling exists at the weeks-to-months timescale; the two should not be conflated.
 - No physiological signature distinguishing the two subtypes was found in the available data (see PRV note below).
 
 <p align="center">
@@ -49,6 +53,7 @@ This project explores whether ADHD is behaviorally heterogeneous with respect to
 **Untested (not measured, not claimed as fact):**
 - Any dopaminergic (D1/D2 receptor) or ATP-depletion mechanism. This was always a narrative/motivating metaphor for the behavioral pattern, never something this project measured. No receptor imaging, pharmacology, or direct physiological validation of this mechanism exists here or is claimed.
 - PRV (pulse-rate variability), originally intended as the key physiological marker for the "Compensated Crash" subtype, is missing (NaN) across all participants and sources in this BALLADEER export. This is a data-availability gap, not a negative finding — the physiological hypothesis remains untested rather than disproven.
+- **Cyclical phase-transition dynamics.** The original hypothesis behind this project proposes that individuals cycle between an "Allostatic Sprint" phase and an "Allostatic Crash" phase over time, rather than being permanently sorted into one static subtype. Based on the author's personal, single-case (n=1) observation, sprint phases last roughly 1 week to 2 months, crash phases roughly 1–4 weeks, with transitions occurring over 2–3 days. **This is an individual's self-reported introspective observation, not a data-derived finding, and has not been tested in any dataset here.** Testing it would require longitudinal / repeated-measures data (e.g. ecological momentary assessment or daily self-tracking over several months) on the same individuals — a fundamentally different study design from the cross-sectional datasets used in this project.
 
 ## Methodology (brief)
 
@@ -73,6 +78,7 @@ Neither dataset's raw data is redistributed in this repository; only derived, ag
 - No independent (third) dataset replication yet.
 - No physiological/mechanistic validation of any kind.
 - Analysis pipeline went through multiple iterations; while each individual test reported here applies proper correction, the broader iterative process carries some risk of researcher degrees of freedom that a pre-registered replication would eliminate.
+- The cyclical/phase-transition version of the hypothesis (as opposed to the static subtype version tested here) has not been tested and would require longitudinal data this project does not have.
 
 ## Reproducing the Analysis
 
