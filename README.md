@@ -53,8 +53,8 @@ Accordingly, the current evidence does **not** establish two discrete, task-gene
 
 <table>
 <tr>
-<td width="50%"><img src="balladeer_impulsivity_by_subtype.png" alt="BALLADEER commission-error rate by analysis-defined subtype" width="100%"></td>
-<td width="50%"><img src="balladeer_accuracy_by_subtype.png" alt="BALLADEER accuracy by analysis-defined subtype" width="100%"></td>
+<td width="50%"><img src="images/balladeer_impulsivity_by_subtype.png" alt="BALLADEER commission-error rate by analysis-defined subtype" width="100%"></td>
+<td width="50%"><img src="images/balladeer_accuracy_by_subtype.png" alt="BALLADEER accuracy by analysis-defined subtype" width="100%"></td>
 </tr>
 </table>
 <p align="center"><sub>BALLADEER descriptive plots. The clusters are analysis-defined and partly use accuracy; these figures are not evidence of separate neural or metabolic mechanisms.</sub></p>
@@ -69,14 +69,14 @@ Accordingly, the current evidence does **not** establish two discrete, task-gene
 
 <table>
 <tr>
-<td width="58%"><img src="ucla_cnp_group_distributions.png" alt="UCLA CNP cluster-free distributions of median go RT, go RT MAD, and SSRT" width="100%"></td>
-<td width="42%"><img src="ucla_cnp_temporal_dynamics.png" alt="UCLA CNP descriptive within-session reaction-time dynamics" width="100%"></td>
+<td width="58%"><img src="images/ucla_cnp_group_distributions.png" alt="UCLA CNP cluster-free distributions of median go RT, go RT MAD, and SSRT" width="100%"></td>
+<td width="42%"><img src="images/ucla_cnp_temporal_dynamics.png" alt="UCLA CNP descriptive within-session reaction-time dynamics" width="100%"></td>
 </tr>
 </table>
 <p align="center"><sub>UCLA CNP conceptual replication. Left: ADHD-control distributions were highly overlapping and all primary tests were nonsignificant. Right: both groups slowed descriptively across four task blocks; no longitudinal phase claim can be inferred from a single session.</sub></p>
 
 <p align="center">
-  <img src="balladeer_eda_change_by_cohort.png" width="560" alt="BALLADEER skin-conductance change by cohort and subtype">
+  <img src="images/balladeer_eda_change_by_cohort.png" width="560" alt="BALLADEER skin-conductance change by cohort and subtype">
 </p>
 <p align="center"><sub>No clear BALLADEER skin-conductance pattern separated the proposed clusters. This negative result is retained rather than omitted.</sub></p>
 
@@ -181,8 +181,8 @@ Recommended derived UCLA files for version control:
 ```text
 ucla_cnp_academic_diagnostic.txt
 ucla_cnp_cluster_diagnostics.csv
-ucla_cnp_group_distributions.png
-ucla_cnp_temporal_dynamics.png
+images/ucla_cnp_group_distributions.png
+images/ucla_cnp_temporal_dynamics.png
 ucla_cnp_analysis_config.json
 ucla_cnp_reproducibility_log.txt
 ```
