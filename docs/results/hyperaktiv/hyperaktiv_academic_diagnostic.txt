@@ -1,0 +1,146 @@
+HYPERAKTIV Validator -- Final Report ("Allostatic Sprint" Hypothesis)
+======================================================================
+
+1. COLUMNS FOUND AND TABLE SHAPES
+----------------------------------------------------------------------
+patient_info.csv shape                        : 103 rows x 33 columns
+CPT-II csv shape                              : 99 rows x 786 columns
+ID (patient_info)                             : ID
+Group/diagnosis                               : ADHD
+Confounder -- Age                             : AGE
+Confounder -- Sex/Gender                      : SEX
+Confounder -- Medication/Stimulants           : MED_Stimulants
+ID (CPT-II)                                   : ID
+RT Mean                                       : Raw Score HitRT
+RT Standard Deviation                         : Raw Score HitSE
+Percent Omissions                             : Percent Omissions
+Percent Commissions                           : Percent Commissions
+Omissions (raw count)                         : Raw Score Omissions
+Commissions (raw count)                       : Raw Score Commissions
+RT std -- calculation method                  : Raw Score HitSE (SE) * sqrt(360 - Omissions) -> Calculated_HitRT_SD
+Fatigue column -- HitRT Block Change          : Raw Score HitRTBlock
+Fatigue column -- HitSE Block Change          : Raw Score HitSEBlock
+Shape after merge by ID                       : 99 rows x 13 columns
+Participants with complete data               : 99 (ADHD=50, control=49)
+
+2. RAW TIMING METRICS AUDIT
+----------------------------------------------------------------------
+  - General TScore HitRT
+  - Adhd TScore HitRT
+  - Neuro TScore HitRT
+  - Raw Score HitRT <- CURRENTLY USED FOR RT
+  - Percent HitRT
+  - General TScore HitSE
+  - Adhd TScore HitSE
+  - Neuro TScore HitSE
+  - Raw Score HitSE <- CURRENTLY USED FOR RT
+  - Percent HitSE
+  - General TScore HitRTBlock
+  - Adhd TScore HitRTBlock
+  - Neuro TScore HitRTBlock
+  - Raw Score HitRTBlock
+  - Percent HitRTBlock
+  - General TScore HitSEBlock
+  - Adhd TScore HitSEBlock
+  - Neuro TScore HitSEBlock
+  - Raw Score HitSEBlock
+  - Percent HitSEBlock
+  - General TScore HitRTIsi
+  - Adhd TScore HitRTIsi
+  - Neuro TScore HitRTIsi
+  - Raw Score HitRTIsi
+  - Percent HitRTIsi
+  - General TScore HitSEIsi
+  - Adhd TScore HitSEIsi
+  - Neuro TScore HitSEIsi
+  - Raw Score HitSEIsi
+  - Percent HitSEIsi
+
+3. DISTRIBUTION OF REAL PATIENTS ACROSS HYPOTHESIS CLUSTERS
+----------------------------------------------------------------------
+CURRENT OUTLIER MITIGATION MODE: none
+
+Hypothesis Cluster                        ADHD (n=50)Clinical Control (n=49)
+True Resilience                                 22.0%               55.1%
+Subtype 2: Compensated Crash                    30.0%               22.4%
+Subtype 1: Decompensated Sprint                 48.0%               22.4%
+
+4. ADHD SUBTYPES (renamed under the "Allostatic Sprint" hypothesis)
+----------------------------------------------------------------------
+  Subtype 1: "Decompensated Sprint" (cluster 'super_d1_flow')
+    the brain runs at maximum ATP, holds speed, but completely loses impulse inhibition, producing a high Percent Commissions
+    Clinical Control: n=11, mean Percent Commissions = 49.9%
+                  mean True Accuracy = 31.5%
+    ADHD        : n=24, mean Percent Commissions = 70.2%
+                  mean True Accuracy = 27.2%
+
+  Subtype 2: "Compensated Crash / Metabolic Fatigue" (cluster 'noise_resonance')
+    the brain shifts into energy-saving mode, timing becomes ragged and noisy, but the manual brake engages, so false clicks are rare
+    Clinical Control: n=11, mean Percent Commissions = 30.1%
+                  mean True Accuracy = 68.4%
+    ADHD        : n=15, mean Percent Commissions = 44.6%
+                  mean True Accuracy = 48.2%
+
+  Note: the ~66%% (super_d1_flow) and ~28%% (noise_resonance) shares refer
+  to the distribution of ADHD participants across hypothesis clusters shown
+  in Section 3, and are WORKING reference points for validation, not fixed
+  exact sample percentages.
+  The underlying dopamine D1/D2 receptor dynamics and ATP depletion profiles
+  are theoretical simulated mechanisms and were not directly measured in the
+  clinical participants.
+
+5. FATIGUE ANALYSIS: 'BLOCK CHANGE' (SLOPE OF THE FATIGUE CURVE OVER THE TEST)
+----------------------------------------------------------------------
+  A positive value -> the participant slowed down/got fatigued toward the end
+  of the test. A negative value or near zero -> the participant held
+  speed/stability ("sprint") without burning out.
+
+Subtype                                                         HitRTBlock (RT)     HitSEBlock (SE)
+Subtype 1: "Decompensated Sprint" (n=24)                                   0.01                0.04
+Subtype 2: "Compensated Crash / Metabolic Fatigue" (n=15)                 -0.01               -0.01
+
+6. STATISTICS: MANN-WHITNEY U (TWO-SIDED), WITHIN-CLUSTER N, BONFERRONI, EFFECT SIZE
+   (comparison metric: Percent Commissions; alpha after Bonferroni correction = 0.0167)
+----------------------------------------------------------------------
+CURRENT OUTLIER MITIGATION MODE: none
+  Note: 'Atypical Behavioral Noise (Sample Outliers)' (entropy_paradox) was not tested -- it is not an active cluster under the current EXCLUSION_MODE, so it is skipped here rather than raising an error.
+
+  Cluster: True Resilience
+    N1 (ADHD) = 11, N2 (Control) = 27
+    U = 173.00, p-value (two-tailed) = 0.4388
+    Effect size (rank-biserial r) = -0.165
+    not significant after Bonferroni correction (threshold p < 0.0167)
+
+  Cluster: Subtype 2: Compensated Crash
+    N1 (ADHD) = 15, N2 (Control) = 11
+    U = 113.00, p-value (two-tailed) = 0.1186
+    Effect size (rank-biserial r) = -0.370
+    not significant after Bonferroni correction (threshold p < 0.0167)
+
+  Cluster: Subtype 1: Decompensated Sprint
+    N1 (ADHD) = 24, N2 (Control) = 11
+    U = 193.00, p-value (two-tailed) = 0.0312
+    Effect size (rank-biserial r) = -0.462
+    not significant after Bonferroni correction (threshold p < 0.0167)
+    Empirical Permutation p-value (N=1000) = 0.0260
+    (26/1000 shuffles reached p <= 0.0312; 1000/1000 permutations had both groups present in this cluster)
+
+7. CONFOUNDER CHECK: age / sex / medication by subtype
+----------------------------------------------------------------------
+  Subtype 1: "Decompensated Sprint" (n=24)
+    Age: mean = 2.04 (std = 0.95, n = 24)
+    Sex/Gender: mean = 0.50 (std = 0.51, n = 24)
+    Medication/Stimulants: no data
+
+  Subtype 2: "Compensated Crash / Metabolic Fatigue" (n=15)
+    Age: mean = 2.47 (std = 0.99, n = 15)
+    Sex/Gender: mean = 0.73 (std = 0.46, n = 15)
+    Medication/Stimulants: mean = 1.00 (std = nan, n = 1)
+
+  Note: the underlying dopamine D1/D2 receptor dynamics and ATP depletion
+  profiles are theoretical simulated mechanisms and were not directly
+  measured in the clinical participants.
+
+Note: 'Sustainable Flow', 'Noise Resonance', 'Super D1 Flow', and Subtypes
+1/2 are WORKING HYPOTHESES at the validation stage, not proven clinical
+theories.
