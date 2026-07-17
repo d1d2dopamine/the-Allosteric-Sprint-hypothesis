@@ -296,7 +296,13 @@ Developed iteratively with AI assistance for coding, statistical guidance, visua
 
 ## License
 
-Code: MIT License. Dataset licenses and terms remain independent and are not overridden by this repository.
+Original software code is licensed under the MIT License; see `LICENSE`.
+
+Original documentation, figures, tables, and aggregated research outputs are
+licensed under CC BY 4.0; see `LICENSE-CONTENT.txt`.
+
+Third-party datasets and materials remain governed by their original licenses
+and terms.
 
 ## Author
 
