@@ -1,0 +1,68 @@
+ADHD PUPIL DATASET — ACADEMIC DIAGNOSTIC
+======================================================
+Script version: 0.2.0-candidate
+Generated: 2026-07-16T23:39:11.092724+00:00
+Dataset DOI: 10.6084/m9.figshare.7218725
+MAT loader mode: mat-v7.3-mcos+mat73-reader-mcos
+Raw file SHA-256: 44aa997e37815e7d2a003a4fc4e967f69438a86bdf04650b02f37aaa2a81819b
+
+DESIGN
+------
+Decoded subjects: 50
+Decoded sessions: 67
+Decoded trials: 10720
+Groups: {"ADHD_off": 28, "Control": 22, "ADHD_on": 17}
+No-response trials: 796; by group: {"ADHD_off": {"sum": 478, "mean": 0.10669642857142857}, "ADHD_on": {"sum": 127, "mean": 0.046691176470588236}, "Control": {"sum": 191, "mean": 0.054261363636363635}}
+Distractor levels: ["3.0", "4.0", "5.0", "6.0"]
+
+SCORING AND CONDITION RULES
+---------------------------
+Missing Perform values are conservatively scored as no-response/omission errors.
+Accuracy uses all trials; error_rate equals 1 - accuracy and is not tested as a duplicate endpoint.
+The four-level Distractor factor is treated categorically; participant-level max-minus-min ranges are order-invariant secondary endpoints.
+Pupil vectors are excluded from the primary behavioral analysis unless --include-pupil is requested.
+
+INTERPRETATION RULES
+--------------------
+Primary inference is ADHD off medication versus controls.
+Medication inference is paired within participant (on minus off).
+GMM is secondary, ADHD-only, RT-derived, and cannot establish a subtype unless all gates pass.
+Behavior cannot establish a dopaminergic, neural, metabolic, or causal mechanism.
+
+CLUSTER-FREE GROUP RESULTS
+--------------------------
+median_rt_ms: n=28/22; median difference=-19.5000; permutation p=0.4479; Holm p=0.4479; Brown-Forsythe p=0.1371
+rt_mad_ms: n=28/22; median difference=61.7500; permutation p=0.0022; Holm p=0.0088; Brown-Forsythe p=0.0000
+rt_iqr_ms: n=28/22; median difference=99.6250; permutation p=0.0024; Holm p=0.0088; Brown-Forsythe p=0.0001
+accuracy: n=28/22; median difference=-0.2750; permutation p=0.0002; Holm p=0.0010; Brown-Forsythe p=0.0676
+omission_rate: n=28/22; median difference=0.0375; permutation p=0.1054; Holm p=0.2108; Brown-Forsythe p=0.0119
+rt_slope_ms_per_trial: n=28/22; median difference=0.2493; permutation p=0.3791; Holm p=1.0000; Brown-Forsythe p=0.0274
+error_slope_per_trial: n=28/22; median difference=0.0006; permutation p=0.1296; Holm p=0.6479; Brown-Forsythe p=0.8975
+load_rt_effect_ms: n=28/22; median difference=-11.0000; permutation p=0.5853; Holm p=1.0000; Brown-Forsythe p=0.0263
+load_accuracy_effect: n=28/22; median difference=0.0000; permutation p=1.0000; Holm p=1.0000; Brown-Forsythe p=0.0804
+distractor_rt_range_ms: n=28/22; median difference=48.2500; permutation p=0.0392; Holm p=0.2352; Brown-Forsythe p=0.0132
+distractor_accuracy_range: n=28/22; median difference=0.5000; permutation p=0.0190; Holm p=0.1330; Brown-Forsythe p=0.0000
+distractor_omission_range: n=28/22; median difference=0.0000; permutation p=1.0000; Holm p=1.0000; Brown-Forsythe p=0.1180
+
+PAIRED MEDICATION RESULTS
+-------------------------
+median_rt_ms: pairs=17; on-off median=58.0000; paired permutation p=0.0710; Holm p=0.5679
+rt_mad_ms: pairs=17; on-off median=-17.0000; paired permutation p=0.0720; Holm p=0.5679
+rt_iqr_ms: pairs=17; on-off median=-20.5000; paired permutation p=0.2613; Holm p=1.0000
+accuracy: pairs=17; on-off median=0.0125; paired permutation p=0.6161; Holm p=1.0000
+omission_rate: pairs=17; on-off median=-0.0187; paired permutation p=0.4189; Holm p=1.0000
+rt_slope_ms_per_trial: pairs=17; on-off median=0.0291; paired permutation p=1.0000; Holm p=1.0000
+load_rt_effect_ms: pairs=17; on-off median=-1.5000; paired permutation p=1.0000; Holm p=1.0000
+distractor_rt_range_ms: pairs=17; on-off median=-45.0000; paired permutation p=0.2589; Holm p=1.0000
+
+EXPLORATORY DISCRETE-CLUSTER CHECK
+----------------------------------
+Stable two-cluster result: False
+Decision: one or more stability gates failed
+Failure of gates is evidence against a defensible discrete partition in this task, not proof of no heterogeneity.
+
+BOUNDARY
+--------
+Significant results are dataset- and task-specific. Null results do not refute prior datasets.
+Distractor range endpoints quantify modulation magnitude, not an ordered or directional distractor effect.
+A continuous RT/accuracy or medication-response spectrum remains exploratory unless replicated independently.
