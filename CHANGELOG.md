@@ -2,7 +2,30 @@
 
 All notable repository changes are documented here.
 
-## [released] — v1.1.0 
+## [1.1.1] — 2026-07-17
+
+### Added
+
+- `scripts/validator_core.py`, a reusable dataset-agnostic validation foundation extracted from the shared architecture of the project validators.
+- `docs/VALIDATOR_CORE_GUIDE.md` with adapter examples, modification rules, scientific guardrails, and a release checklist.
+- `scripts/HEALTHY_VALID_BALLADEER.py`, preserving the syntax-valid v1.0.1 cluster-free candidate under its known SHA-256 identity.
+- `docs/BALLADEER_VALIDATOR_HANDOFF.md` with the candidate’s status, required source schema, unresolved P0/P1 corrections, run plan, expected outputs, and interpretation boundaries.
+- Deterministic synthetic core smoke tests covering independent comparisons, paired comparisons, multiplicity correction, and gated GMM execution.
+- Shared helpers for integrity-checked downloads, hashes, safe ZIP extraction, reproducibility logs, reports, plots, output archives, and SHA-256 manifests.
+
+### Changed
+
+- README now documents the universal core without claiming that historical validators were silently refactored or rerun.
+- Release preparation instructions now require the core smoke test and final manifest verification.
+
+### Notes
+
+- The core is an engineering convenience, not a clinical tool, statistical autopilot, or substitute for dataset-specific scientific decisions.
+- Existing validators remain standalone release artifacts; future validators may import the shared core through explicit adapters.
+- The cluster-free BALLADEER candidate remains pending, has not completed a real-data rerun, and contributes no new numerical result.
+- The candidate must not replace or be confused with the completed historical v1.0.0 BALLADEER outputs.
+
+## [1.1.0] — 2026-07-17
 
 ### Added
 
