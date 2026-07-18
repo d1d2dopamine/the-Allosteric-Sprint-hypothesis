@@ -57,7 +57,16 @@ All notable repository changes are documented here.
 - No paired medication endpoint survived Holm correction.
 - No acceptable stable two-component ADHD-only GMM.
 
-### Unresolved
+### Unresolved  
+
+## [1.1.1] — 2026-07-18
+
+### Documentation corrections
+
+- Corrected “Allosteric Sprint” to “Allostatic Sprint” in the repository name.
+- Restored the AI-assisted development disclosure that had been unintentionally
+  removed during documentation revisions.
+- Clarified that D1D2DOPAMINE is a pseudonymous independent researcher.
 
 - Pupil time series were not analyzed in the reported primary run.
 - The cluster-free BALLADEER candidate still lacks a complete real-data rerun.
