@@ -316,6 +316,22 @@ The public release history must remain immutable. This repository bundle is prep
 
 Developed iteratively with AI assistance for coding, statistical guidance, visualization, and methodological critique. Conceptual direction, analytic decisions, interpretations, and errors remain the author’s responsibility.
 
+## AI-Assisted Development Disclosure
+
+Generative AI tools were used extensively throughout this project for code
+drafting, debugging, refactoring, documentation, literature navigation, and
+methodological discussion.
+
+The project was directed by D1D2DOPAMINE, a pseudonymous independent
+researcher. D1D2DOPAMINE selected the research questions and datasets, made
+the final methodological decisions, reviewed and executed the analyses,
+rejected inappropriate analytical suggestions, interpreted the results, and
+remains responsible for all claims, limitations, errors, and corrections.
+
+AI-generated output was not treated as scientific evidence or independent
+validation. The repository is public so that the analyses can be inspected,
+challenged, and independently reproduced by human researchers.
+
 ## License
 
 Original software code is licensed under the MIT License; see `LICENSE`.
